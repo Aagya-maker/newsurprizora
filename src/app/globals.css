@@ -37,22 +37,20 @@ h1{
     
     margin-left: 20px;
     justify-content: center;
-    background: linear-gradient(to right, white, aliceblue, purple, white, aliceblue, white);
+    background: linear-gradient(to right, purple, aliceblue, white, white, aliceblue, purple);
   
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     animation: glitter 3s infinite;
   
   }
-  @keyframes glitter{
-  
-    0%{text-shadow:  0 0 10px white};
-  
-    20%{text-shadow: 0 0 20px aliceblue};
-    40%{text-shadow: 0 0 30px purple};
-    60%{text-shadow: 0 0 40px white};
-    80%{text-shadow: 0 0 50px aliceblue};
-    
-    100%{text-shadow: 0 0 60px white};
-  }
 
+  @keyframes glitter{
+    0%{text-shadow: 0 0 10px purple};
+    20%{text-shadow: 0 0 20px aliceblue};
+    40%{text-shadow: 0 0 30px white};
+    60%{text-shadow: 0 0 40px purple};
+    80%{text-shadow: 0 0 50px aliceblue};
+    100%{text-shadow: 0 0 60px purple};
+  }
+  
