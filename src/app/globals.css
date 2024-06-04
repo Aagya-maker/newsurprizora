@@ -31,13 +31,13 @@ h1{
     font-family: 'Josefin Sans', serif;
     text-align: center;
     font-weight: bolder;
-    
+    font-size: 60px;
   
   
     
     margin-left: 20px;
     justify-content: center;
-    background: linear-gradient(to right, white, aliceblue, whitesmoke, white, aliceblue, white);
+    background: linear-gradient(to right, white, aliceblue, purple, white, aliceblue, white);
   
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
@@ -49,7 +49,7 @@ h1{
     0%{text-shadow:  0 0 10px white};
   
     20%{text-shadow: 0 0 20px aliceblue};
-    40%{text-shadow: 0 0 30px whitesmoke};
+    40%{text-shadow: 0 0 30px purple};
     60%{text-shadow: 0 0 40px white};
     80%{text-shadow: 0 0 50px aliceblue};
     

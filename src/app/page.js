@@ -6,14 +6,14 @@ import Autoplay from 'embla-carousel-autoplay';
 
 export default function EmblaCarousel() {
     const [emblaRef] = useEmblaCarousel({ loop: true }, [
-        Autoplay({ delay: 3000 }),
+        Autoplay({ delay: 4000 }),
     ]);
 
     return (
         <div>
-            <h1 className='text-center text-5xl font-bold mb-4'>Surprizora</h1>
+            <h1 className='text-center font-bold mb-4'>Surprizora</h1>
             <div
-                className='embla mx-auto mt-20 h-128 max-w-6xl border'
+                className='embla mx-auto mt-20 h-128 max-w-6xl border-collapse'
                 ref={emblaRef}
             >
                 <div className='embla__container h-full'>
@@ -33,7 +33,7 @@ export default function EmblaCarousel() {
                     </div>
                     <div className='embla__slide flex items-center justify-center'>
                         <img
-                            src='surprizora 3.png'
+                            src='surprizora 6.png'
                             alt='slide 2'
                             className='w-full h-full object-cover'
                         />
