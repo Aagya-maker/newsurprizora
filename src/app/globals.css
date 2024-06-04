@@ -54,3 +54,19 @@ h1{
     100%{text-shadow: 0 0 60px purple};
   }
   
+  button{
+    font-family: 'Josefin Sans', serif;
+    background: linear-gradient(to right, purple, aliceblue, white, white, aliceblue, purple);
+    animation: glitter 3s infinite;
+    color: black;
+
+  }
+
+  @keyframes glitter{
+    0%{text-shadow: 0 0 10px purple};
+    20%{text-shadow: 0 0 20px aliceblue};
+    40%{text-shadow: 0 0 30px white};
+    60%{text-shadow: 0 0 40px purple};
+    80%{text-shadow: 0 0 50px aliceblue};
+    100%{text-shadow: 0 0 60px purple};
+  }

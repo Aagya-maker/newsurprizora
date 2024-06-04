@@ -40,6 +40,11 @@ export default function EmblaCarousel() {
                     </div>
                 </div>
             </div>
+            <div className='text-center mt-8'>
+                <button className='bg-purple-500 hover:bg-purple-700 font-bold py-2 px-4 rounded-full border-b-8'>
+                    Take the questionnaire and begin the gift quest
+                </button>
+            </div>
         </div>
     );
 }
