@@ -2,32 +2,57 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: black;
+  color: black;
+
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+
+.embla{
+  overflow: hidden;
 }
+
+.embla__container{
+  display: flex;
+}
+
+.embla__slide{
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+
+
+h1{
+  
+    margin-top: 8px;
+    font-family: 'Josefin Sans', serif;
+    text-align: center;
+    font-weight: bolder;
+    
+  
+  
+    
+    margin-left: 20px;
+    justify-content: center;
+    background: linear-gradient(to right, white, aliceblue, whitesmoke, white, aliceblue, white);
+  
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    animation: glitter 3s infinite;
+  
+  }
+  @keyframes glitter{
+  
+    0%{text-shadow:  0 0 10px white};
+  
+    20%{text-shadow: 0 0 20px aliceblue};
+    40%{text-shadow: 0 0 30px whitesmoke};
+    60%{text-shadow: 0 0 40px white};
+    80%{text-shadow: 0 0 50px aliceblue};
+    
+    100%{text-shadow: 0 0 60px white};
+  }
+
