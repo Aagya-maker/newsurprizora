@@ -2,12 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+html{
+  scroll-behavior: smooth;
+}
+
+
 
 body {
   background-color: black;
   color: black;
+  overflow-x: hidden;
+ 
 
 }
+
+
 
 
 .embla{
@@ -32,41 +41,46 @@ h1{
     text-align: center;
     font-weight: bolder;
     font-size: 60px;
+    transition: transform 2s ease-in-out, opactiy 2s ease-in-out;
   
   
     
     margin-left: 20px;
     justify-content: center;
-    background: linear-gradient(to right, purple, aliceblue, white, white, aliceblue, purple);
-  
-    -webkit-text-fill-color: transparent;
+    background: linear-gradient(to right, purple, aliceblue, white, aliceblue, white, purple);
     -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     animation: glitter 3s infinite;
-  
-  }
 
-  @keyframes glitter{
-    0%{text-shadow: 0 0 10px purple};
-    20%{text-shadow: 0 0 20px aliceblue};
-    40%{text-shadow: 0 0 30px white};
-    60%{text-shadow: 0 0 40px purple};
-    80%{text-shadow: 0 0 50px aliceblue};
-    100%{text-shadow: 0 0 60px purple};
-  }
+} 
+
+@keyframes glitter{
+  0%{text-shadow: 0 0 10px purple};
+  20%{text-shadow: 0 0 20px aliceblue};
+  40%{text-shadow: 0 0 30px white};
+  60%{text-shadow: 0 0 40px aliceblue} ;
+  80%{text-shadow: 0 0 50px white};
+  100%{text-shadow: 0 0 60px purple};
+  
+
+
+}
   
   button{
-    font-family: 'Josefin Sans', serif;
-    background: linear-gradient(to right, purple, aliceblue, white, white, aliceblue, purple);
+    font-family: 'Galaxy', serif;
+    background: linear-gradient(to right, purple, aliceblue, white, aliceblue, white, purple);
     animation: glitter 3s infinite;
     color: black;
 
   }
 
-  @keyframes glitter{
-    0%{text-shadow: 0 0 10px purple};
-    20%{text-shadow: 0 0 20px aliceblue};
-    40%{text-shadow: 0 0 30px white};
-    60%{text-shadow: 0 0 40px purple};
-    80%{text-shadow: 0 0 50px aliceblue};
-    100%{text-shadow: 0 0 60px purple};
-  }
+ 
+
+
+
+
+a:hover{
+  transform: scale(1.1);
+  transition: transform 0.5s ease-in-out;
+}
+
