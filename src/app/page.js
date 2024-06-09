@@ -4,7 +4,8 @@ import Link from 'next/link';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import SmoothScroll from 'smooth-scroll';
-import QuestionsPage from './questions/page'; // Adjust the path if necessary
+import QuestionsPage from './questions/page'; 
+
 
 export default function EmblaCarousel() {
     const [emblaRef] = useEmblaCarousel({ loop: true }, [
@@ -17,6 +18,7 @@ export default function EmblaCarousel() {
             speedAsDuration: true,
             easing: 'easeInOutQuint',
             offset: 0,
+            fade: true
         });
 
         return () => {
