@@ -4,6 +4,7 @@ import Link from 'next/link';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import SmoothScroll from 'smooth-scroll';
+import QuestionsPage from './questions/page'; // Adjust the path if necessary
 
 export default function EmblaCarousel() {
     const [emblaRef] = useEmblaCarousel({ loop: true }, [
@@ -11,12 +12,11 @@ export default function EmblaCarousel() {
     ]);
 
     useEffect(() => {
-       
         const scroll = new SmoothScroll('a[href*="#"]', {
             speed: 10000,
             speedAsDuration: true,
-            easing: 'easeInOutQuint', 
-            offset: 0, 
+            easing: 'easeInOutQuint',
+            offset: 0,
         });
 
         return () => {
@@ -67,13 +67,10 @@ export default function EmblaCarousel() {
                 </div>
             </section>
 
+           <div className='bg-pink-300'>
             <section id="question-section" className='max-w-6xl mx-auto mt-20 p-4 bg-silver-300 h-screen'>
-                <h1 className='text-center font-bold mb-4'>Questionnaire</h1>
-                <div>
-                    <div className='mt-20'>
-                        <p>This is the questionnaire section</p>
-                    </div>
-                </div>
+                <h2 className='text-center font-bold mb-4 text-black-100 text-6xl'>Let's Get Started, Shall We?</h2>
+                <QuestionsPage />
                 <div className='text-center mt-8'>
                     <Link href="#page-top">
                         <button
@@ -84,6 +81,7 @@ export default function EmblaCarousel() {
                     </Link>
                 </div>
             </section>
+            </div>
         </div>
     );
 }

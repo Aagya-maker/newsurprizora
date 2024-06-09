@@ -10,6 +10,7 @@ html{
 
 body {
   background-color: black;
+ 
   color: black;
   overflow-x: hidden;
  
@@ -67,10 +68,11 @@ h1{
 }
   
   button{
-    font-family: 'Galaxy', serif;
+    font-family: 'Baskerville', serif;
     background: linear-gradient(to right, purple, aliceblue, white, aliceblue, white, purple);
     animation: glitter 3s infinite;
     color: black;
+    font-size: 20px;
 
   }
 
@@ -84,3 +86,49 @@ a:hover{
   transition: transform 0.5s ease-in-out;
 }
 
+#question-section{
+  background-color: beige;
+ 
+}
+
+h2{
+  color: black;
+  
+  background: linear-gradient(to right, black, black, black, black, black, black);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  animation: glitter 3s infinite;
+  font-family: 'Josefin Sans', serif;
+}
+
+
+#page-top{
+  background-color: black;
+  margin: 0;
+  padding: 0;
+  
+}
+
+
+.questions-page{
+  color: purple;
+  font-family: 'Baskerville', serif;
+  font-size: 45px;
+  text-align: center;
+  margin-top: 50px;
+  justify-content: center;
+  border-color: black;
+  font-weight: bolder;
+
+}
+
+h3{
+  color: purple;
+  font-family: 'Baskerville', serif;
+  font-size: 45px;
+  text-align: center;
+  margin-top: 50px;
+  justify-content: center;
+  border-color: black;
+  font-weight: bolder;
+}
