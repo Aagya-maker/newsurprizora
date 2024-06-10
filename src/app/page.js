@@ -8,6 +8,7 @@ import QuestionsPage from './questions/page';
 import CountrySelector from './countryselector/page';
 
 
+
 export default function EmblaCarousel() {
     const [emblaRef] = useEmblaCarousel({ loop: true }, [
         Autoplay({ delay: 4000 }),

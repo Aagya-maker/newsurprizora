@@ -1,0 +1,31 @@
+.country-selector {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    width: auto;
+    background-color: white;
+    border: 10px solid purple;
+    box-shadow: 0 6px 10px beige;
+    font-family: "Baskerville";
+    font-weight: bold;
+}
+
+.custom-single-value {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.custom-option {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.custom-option:hover {
+    background-color: #f3f3f3;
+}
+
