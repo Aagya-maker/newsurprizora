@@ -31,6 +31,7 @@ body {
 .embla__slide{
   flex: 0 0 100%;
   min-width: 0;
+  opacity: 10;
 }
 
 
@@ -162,22 +163,4 @@ label {
   cursor: pointer;
 }
 
-.custom-single-value {
-  display: flex;
-  align-items: center;
-}
-
-.custom-option {
-  display: flex;
-  align-items: center;
-  padding: 8px;
-}
-
-.custom-option:hover {
-  background-color: #f0f0f0;
-}
-
-.country-selector {
-  margin-bottom: 16px;
-}
 

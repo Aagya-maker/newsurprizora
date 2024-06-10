@@ -1,5 +1,5 @@
 'use client';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
@@ -8,25 +8,19 @@ import QuestionsPage from './questions/page';
 import CountrySelector from './countryselector/page';
 
 
-
 export default function EmblaCarousel() {
-    const [emblaRef] = useEmblaCarousel({ loop: true }, [
-        Autoplay({ delay: 4000 }),
-    ]);
+    const [emblaRef, embla] = useEmblaCarousel({ loop: true }, [Autoplay({ delay: 4000 })]);
+    const [scrollProgress, setScrollProgress] = useState(0);
 
     useEffect(() => {
-        const scroll = new SmoothScroll('a[href*="#"]', {
-            speed: 10000,
-            speedAsDuration: true,
-            easing: 'easeInOutQuint',
-            offset: 0,
-            fade: true
-        });
-
-        return () => {
-            scroll.destroy();
+        if (!embla) return;
+        const updateScrollProgress = () => {
+            setScrollProgress(embla.scrollProgress());
         };
-    }, []);
+        embla.on('scroll', updateScrollProgress);
+        return () => embla.off('scroll', updateScrollProgress);
+    }, [embla]);
+
 
     return (
         <div>
@@ -36,23 +30,44 @@ export default function EmblaCarousel() {
                 <div
                     className='embla mx-auto mt-20 h-128 max-w-6xl border-collapse'
                     ref={emblaRef}
+                    style={{opaciit:1-Math.pow(scrollProgress, 15),
+                        boxShadow: '4px 8px 36px 12px purple',
+                     }}
                 >
                     <div className='embla__container h-full'>
-                        <div className='embla__slide flex items-center justify-center'>
+                        <div className='embla__slide flex items-center justify-center'
+                        style={{opaciit:1-Math.pow(scrollProgress, 15),
+                            boxShadow: '0px 12px 36px -4px aliceblue',
+                         }}
+                        
+                        >
                             <img
                                 src='surprizora.png'
                                 alt='Welcome to surprizora'
                                 className='w-full h-full object-cover'
                             />
                         </div>
-                        <div className='embla__slide flex items-center justify-center'>
+                        <div className='embla__slide flex items-center justify-center'
+                         style={{opaciit:1 -Math.pow(scrollProgress, 15),
+                            boxShadow: '0px 12px 36px -4px aliceblue',
+
+                          }}
+                        
+                        >
                             <img
                                 src='surprizora 2.png'
                                 alt='slide 2'
                                 className='w-full h-full object-cover'
                             />
                         </div>
-                        <div className='embla__slide flex items-center justify-center'>
+                        <div className='embla__slide flex items-center justify-center '
+                         style={{opaciit:1 -Math.pow(scrollProgress, 15) ,
+                            boxShadow: '0px 12px 36px -4px aliceblue',
+                            
+                         }}
+                        
+                        
+                        >
                             <img
                                 src='surprizora 6.png'
                                 alt='slide 2'
