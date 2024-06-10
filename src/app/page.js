@@ -5,6 +5,7 @@ import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import SmoothScroll from 'smooth-scroll';
 import QuestionsPage from './questions/page'; 
+import CountrySelector from './countryselector/page';
 
 
 export default function EmblaCarousel() {
@@ -28,6 +29,7 @@ export default function EmblaCarousel() {
 
     return (
         <div>
+            <CountrySelector/>
             <section id="page-top" className='h-screen'>
                 <h1 className='text-center font-bold mb-1'>Surprizora</h1>
                 <div
