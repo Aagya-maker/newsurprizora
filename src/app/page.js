@@ -36,7 +36,7 @@ export default function EmblaCarousel() {
                 >
                     <div className='embla__container h-full'>
                         <div className='embla__slide flex items-center justify-center'
-                        style={{opaciit:1-Math.pow(scrollProgress, 15),
+                        style={{opaciit:1-Math.pow(scrollProgress, 55),
                             boxShadow: '0px 12px 36px -4px aliceblue',
                          }}
                         
@@ -48,7 +48,7 @@ export default function EmblaCarousel() {
                             />
                         </div>
                         <div className='embla__slide flex items-center justify-center'
-                         style={{opaciit:1 -Math.pow(scrollProgress, 15),
+                         style={{opaciit:1 -Math.pow(scrollProgress, 55),
                             boxShadow: '0px 12px 36px -4px aliceblue',
 
                           }}
@@ -61,7 +61,7 @@ export default function EmblaCarousel() {
                             />
                         </div>
                         <div className='embla__slide flex items-center justify-center '
-                         style={{opaciit:1 -Math.pow(scrollProgress, 15) ,
+                         style={{opaciit:1 -Math.pow(scrollProgress, 55) ,
                             boxShadow: '0px 12px 36px -4px aliceblue',
                             
                          }}

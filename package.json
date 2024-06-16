@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "amazon-pa-api50": "^0.2.0",
     "embla-carousel-autoplay": "^8.1.3",
     "embla-carousel-react": "^8.1.3",
     "locomotive-scroll": "^4.1.4",

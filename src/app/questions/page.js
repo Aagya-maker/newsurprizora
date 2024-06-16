@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {useRouter} from 'next/navigation';
 
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -8,6 +9,8 @@ import 'slick-carousel/slick/slick-theme.css';
 
 
 function QuestionsPage() {
+    const router = useRouter();
+    const [answers, setAnswers]=useState({});
     const questions = [
         {
             id: 1,
@@ -311,6 +314,14 @@ function QuestionsPage() {
         
     ];
 
+
+   
+
+
+
+
+
+
     const totalQuestions = questions.length;
     const [currentQuestion, setCurrentQuestion] = useState(0);
 
@@ -331,9 +342,22 @@ function QuestionsPage() {
     };
 
     const handleSubmit = () => {
-        alert("Questionnaire submitted!");
+        const queryParams = new URLSearchParams(answers).toString();
+        router.push(`/gifts?${queryParams}`)
+        
     };
 
+    const handleCountryChange= (selectedOption)=>{
+        setSelectedCountry(selectedOption);
+    };
+
+    const handleOptionChange= (questionId, optionValue)=>{
+        setAnswers(prev=>({...prev, [questionId]: optionValue}))
+    }
+
+    const handleChange = (questionId, value)=>{
+        setAnswers({...answers, [questionId]: value})
+    };
 
    
 
@@ -367,11 +391,12 @@ function QuestionsPage() {
         <div className="questions-page">
             <Slider {...sliderSettings}>
                 {questions.map((question, index) => (
-                    <div key={index} className={``}>
+                    <div key={index} className="">
                         <h3 className="">{question.text}</h3>
                         {question.options.map(option => (
                             <div key={option.value} className="text-align-center">
-                                <input type="radio" id={option.value} name={`question${currentQuestion}`} value={option.value} required className="mr-2" />
+                                
+                                <input type="radio" id={option.value} name={`question${index}`} value={option.value}  onChange = {()=> handleChange(question.id, option.value)}required className="mr-2" />
                                 <label htmlFor={option.value} className="">{option.label}</label>
                             </div>
                         ))}
