@@ -316,50 +316,22 @@ function QuestionsPage() {
 
 
    
-
-
-
-
-
-
-    const totalQuestions = questions.length;
-    const [currentQuestion, setCurrentQuestion] = useState(0);
-
-    const handleNextQuestion = () => {
-        if (currentQuestion < totalQuestions - 1) {
-            setCurrentQuestion(currentQuestion + 1);
-        }
-    };
-
-    const handleSkipQuestion = () => {
-        handleNextQuestion();
-    };
-
-    const handleBackQuestion = () => {
-        if (currentQuestion > 0) {
-            setCurrentQuestion(currentQuestion - 1);
-        }
+    const handleChange = (questionId, value) => {
+        setAnswers ({ ...answers, [questionId]: value });
     };
 
     const handleSubmit = () => {
+        debugger;
+
+
         const queryParams = new URLSearchParams(answers).toString();
-        router.push(`/gifts?${queryParams}`)
-        
+       
+        router.push(`/gifts?${queryParams}`);
     };
 
-    const handleCountryChange= (selectedOption)=>{
-        setSelectedCountry(selectedOption);
-    };
 
-    const handleOptionChange= (questionId, optionValue)=>{
-        setAnswers(prev=>({...prev, [questionId]: optionValue}))
-    }
 
-    const handleChange = (questionId, value)=>{
-        setAnswers({...answers, [questionId]: value})
-    };
 
-   
 
 
 
@@ -382,36 +354,37 @@ function QuestionsPage() {
         
     };
 
-    
-    
-    
-    
-
     return (
         <div className="questions-page">
             <Slider {...sliderSettings}>
                 {questions.map((question, index) => (
-                    <div key={index} className="">
-                        <h3 className="">{question.text}</h3>
+                    <div key={index}>
+                        <h3>{question.text}</h3>
                         {question.options.map(option => (
-                            <div key={option.value} className="text-align-center">
-                                
-                                <input type="radio" id={option.value} name={`question${index}`} value={option.value}  onChange = {()=> handleChange(question.id, option.value)}required className="mr-2" />
-                                <label htmlFor={option.value} className="">{option.label}</label>
+                            <div key={option.value}>
+                                <input
+                                    type="radio"
+                                    id={option.value}
+                                    name={`question${index}`}
+                                    value={option.value}
+                                    onChange={() => handleChange(question.id, option.value)}
+                                    required
+                                />
+                                <label htmlFor={option.value}>{option.label}</label>
                             </div>
                         ))}
                     </div>
                 ))}
             </Slider>
-
             <div className="text-center mt-8">
-               
-                <button onClick={handleSubmit} className='bg-green-500 hover:bg-green-700 text-black font-bold py-2 px-4 rounded-full border-b-8 mr-4 transition-all duration-300'>
+                <button
+                    onClick={handleSubmit}
+                    className='bg-green-500 hover:bg-green-700 text-black font-bold py-2 px-4 rounded-full border-b-8 mr-4 transition-all duration-300'>
                     Okay, take me to the gift now!
                 </button>
             </div>
         </div>
     );
-  }
+}
 
 export default QuestionsPage;
