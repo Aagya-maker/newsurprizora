@@ -12,7 +12,7 @@ export async function GET(request) {
             return NextResponse.json({ error: 'No filters provided' }, { status: 400 });
         }
 
-        const jsonDirectory = path.join(process.cwd(), 'data');
+        const jsonDirectory = path.join(process.cwd(), 'public');
         const fileContents = await fs.readFile(path.join(jsonDirectory, 'gifts.json'), 'utf8');
         const giftsData = JSON.parse(fileContents);
 
@@ -22,7 +22,7 @@ export async function GET(request) {
 
         const filteredGifts = giftsData.filter(gift => {
             return Object.entries(filters).every(([key, value]) => {
-                return gift[key] && gift[key].toString().toLowerCase() === value.toLowerCase();
+                return gift.category === value.toLowerCase();
             });
         });
 
