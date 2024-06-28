@@ -321,7 +321,7 @@ function QuestionsPage() {
     };
 
     const handleSubmit = () => {
-        debugger;
+        
 
 
         const queryParams = new URLSearchParams(answers).toString();

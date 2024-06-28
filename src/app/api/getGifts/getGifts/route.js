@@ -3,6 +3,7 @@ import path from 'path';
 import { promises as fs } from 'fs';
 
 export async function GET(request) {
+    console.log("debugging")
     try {
         const { searchParams } = new URL(request.url);
         const filters = Object.fromEntries(searchParams.entries());
